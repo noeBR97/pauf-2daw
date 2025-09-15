@@ -1,3 +1,6 @@
+#importamos la libreria numpy
+import numpy as np
+
 #EJ-1
 listaEquipos = ["Real Madrid", "Barcelona", "Atlético", "Sevilla", "Valencia"]
 
@@ -37,3 +40,8 @@ for gol in range(len(golesOrdenados)):
         break #paramos para que solo lo haga una vez, ya que siempre se cumple la condicion
 
 print(golesOrdenados)
+
+#media de los goles con numpy
+mediaGoles = np.mean(goles)
+print("******************")
+print(round(mediaGoles, 2)) #lo sacamos con dos decimales
