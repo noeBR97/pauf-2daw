@@ -52,3 +52,6 @@ DEBUG:heroes_y_villanos_log:El usuario ha elegido la opción 3.
 INFO:heroes_y_villanos_log:Iniciando ejecución
 INFO:heroes_y_villanos_log:Se muestran las opciones.
 DEBUG:heroes_y_villanos_log:El usuario ha elegido la opción 3.
+INFO:heroes_y_villanos_log:Iniciando ejecución
+INFO:heroes_y_villanos_log:Se muestran las opciones.
+DEBUG:heroes_y_villanos_log:El usuario ha elegido la opción 3.
