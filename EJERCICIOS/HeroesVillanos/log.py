@@ -1,5 +1,6 @@
-'''En esta clase hacer toda la gestion del log'''
+import logging
 from datetime import datetime
 
-fecha = datetime.now().strftime("%d%m%Y").lower()
-nombre_fichero = f"log/{fecha}_HEROESYVILLANOS.log"
+class Log:
+    fecha = datetime.now().strftime("%d%m%Y").lower()
+    nombre_fichero = f"log/{fecha}_HEROESYVILLANOS.log"
