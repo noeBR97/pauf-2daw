@@ -1,7 +1,7 @@
 import logging
 import os
 from datetime import datetime
-
+import utils
 
 fecha = datetime.now().strftime("%d%m%Y").lower()
 nombre_fichero = f"{fecha}_HEROESYVILLANOS.log"
@@ -34,6 +34,7 @@ logger.addHandler(ch)
 
 
 def menu(logger):
+    logger.info("Se muestran las opciones.")
     fin = False
     while not fin:
         opcion = ""
@@ -41,28 +42,27 @@ def menu(logger):
 
         print("1- Listar Héroes\n"
               "2- Listar Villanos\n"
-              "3- Crear héroe\n"
-              "4- Crear villano\n"
-              "5- Realizar búsqueda\n"
-              "6- Emparejar héroe y villano\n"
-              "7- SALIR")
+              "3- Crear personaje\n"
+              "4- Realizar búsqueda\n"
+              "5- Emparejar héroe y villano\n"
+              "6- SALIR")
 
         while not opcion_correcta:
             opcion = int(input("Elige una opción: "))
-            if opcion in [1, 2, 3, 4, 5, 6, 7]:
+            if opcion in [1, 2, 3, 4, 5, 6]:
                 opcion_correcta = True
             else:
                 logger.warning("Elige una opción correcta.")
 
         if opcion == 1:
             logger.debug("El usuario ha elegido la opción 1.")
-            ""
+
             #listamos héroes
         elif opcion == 2:
             ""
             #listamos villanos
         elif opcion == 3:
-            ""
+            utils.crear_personaje()
             #creamos héroe
         elif opcion == 4:
             ""

@@ -47,7 +47,6 @@ def obtener_atributos_comunes_desde_teclado():
 
     return nombre_str, apellidos_str, fecha_str
 
-
 def registrar_heroe_en_json():
     nuevos_datos_python = []
 
@@ -63,3 +62,33 @@ def registrar_heroe_en_json():
     # Escribir el archivo JSON actualizado
     with open("./archivos_json/personajes/heroes.json", 'w') as archivo:
         json.dump(nuevos_datos_python, archivo, indent=4)
+
+def registrar_villano_en_json():
+    nuevos_datos_python = []
+
+    with open("./archivos_json/villanos.json", 'r') as archivo:
+        datos_python = json.load(archivo)
+
+    pj = crear_personaje()
+
+    es_mi_clase = isinstance(pj, Villano)
+
+    nuevos_datos_python = pj.to_list()
+
+    # Escribir el archivo JSON actualizado
+    with open("./archivos_json/villanos.json", 'w') as archivo:
+        json.dump(nuevos_datos_python, archivo, indent=4)
+
+def listar_heroes():
+    ruta = "./archivos_json/heroes.json"
+
+    with open(ruta, 'r', encoding='utf-8') as f:
+        datos = json.load(f)
+        print(f"HEROES:\n{datos}\n")
+
+def listar_villanos():
+    ruta = "./archivos_json/villanos.json"
+
+    with open(ruta, 'r', encoding='utf-8') as f:
+        datos = json.load(f)
+        print(f"VILLANOS:\n{datos}\n")
