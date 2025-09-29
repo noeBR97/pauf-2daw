@@ -1,18 +1,18 @@
 from datetime import date
+import uuid
 
 class Persona:
-    def __init__(self, nombre, apellidos, anio, mes, dia, id):
+    def __init__(self, nombre, apellidos, fecha_nacimiento, puntuacion_total):
         self.__nombre = nombre
         self.__apellidos = apellidos
-        self.__anio = anio
-        self.__mes = mes
-        self.__dia = dia
-        self.__edad = self.calcularEdad()
-        self.__id = id
+        self.__fecha_nacimiento = fecha_nacimiento
+        self.__puntuacion_total = puntuacion_total
+        self.__id = uuid.uuid4()
 
 
-    def calcularEdad(self):
-        fecha_nacimiento = date (self.__anio, self.__mes, self.__dia)
-        dia_actual = date.today()
-        edad = dia_actual.year - fecha_nacimiento.year
-        return edad
+    def __str__(self):
+        print("ID: " + str(self.__id) + "\n"
+              "Nombre: " + str(self.__nombre) + "\n"
+              "Apellidos: " + str(self.__apellidos) + "\n"
+              "Fecha nacimiento: " + str(self.__fecha_nacimiento) + "\n"
+              "Puntuación total: " + str(self.__puntuacion_total) + "\n")
