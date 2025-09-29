@@ -1,7 +1,7 @@
 import logging
 import os
 from datetime import datetime
-import utils
+import utils.utils as utils
 
 fecha = datetime.now().strftime("%d%m%Y").lower()
 nombre_fichero = f"{fecha}_HEROESYVILLANOS.log"
@@ -56,14 +56,16 @@ def menu(logger):
 
         if opcion == 1:
             logger.debug("El usuario ha elegido la opción 1.")
-
-            #listamos héroes
+            utils.listar_heroes()
+            logger.debug("Se han listado los héroes.")
         elif opcion == 2:
-            ""
-            #listamos villanos
+            logger.debug("El usuario ha elegido la opción 2.")
+            utils.listar_villanos()
+            logger.debug("Se han listado los villanos.")
         elif opcion == 3:
+            logger.debug("El usuario ha elegido la opción 3.")
             utils.crear_personaje()
-            #creamos héroe
+            logger.debug("Personaje creado")
         elif opcion == 4:
             ""
             #creamos villano
@@ -71,9 +73,6 @@ def menu(logger):
             ""
             #buscamos por atributo
         elif opcion == 6:
-            ""
-            #emparejamos
-        elif opcion == 7:
             fin = True
         else:
             print("Opción no permitida.")
@@ -83,7 +82,7 @@ def main():
         logger.info("Iniciando ejecución")
         menu(logger)
     except Exception as e:
-        print(f"TODOS LOS ERRORES AL LOG {e}")
+        print(f"{e}")
 
 
 if __name__ == "__main__":

@@ -1,6 +1,6 @@
 import random
 
-from persona import Persona
+from clases.persona import Persona
 
 class Villano(Persona):
     def __init__(self, nombre, apellidos, fecha_nacimiento):
