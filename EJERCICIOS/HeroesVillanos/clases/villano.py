@@ -2,7 +2,7 @@ import random
 
 from persona import Persona
 
-class Villano:
+class Villano(Persona):
     def __init__(self, nombre, apellidos, fecha_nacimiento, id):
         super(Persona, self).__init__(nombre, apellidos, fecha_nacimiento, id)
         self.__chagepeteador = random.randint(0, 100)
