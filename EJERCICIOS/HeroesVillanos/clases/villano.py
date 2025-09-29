@@ -16,3 +16,15 @@ class Villano(Persona):
         suma_poderes = sum([chagepeteador, entregador_tardio, ausencias, hablador])
         puntuacion_total = (suma_poderes * 100) / 400
         return int(puntuacion_total)
+
+    def __str__(self):
+        super_aux_str = super().__str__()
+
+        aux_str = super_aux_str + (
+            "Chagepeteador: " + str(self.__chagepeteador) + "\n"
+            "Entregador Tardío: " + str(self.__entregador_tardio) + "\n"
+            "Ausencias: " + str(self.__ausencias) + "\n"
+            "Hablador: " + str(self.__hablador)
+        )
+
+        return aux_str
