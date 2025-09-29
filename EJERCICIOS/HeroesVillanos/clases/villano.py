@@ -28,3 +28,8 @@ class Villano(Persona):
         )
 
         return aux_str
+
+    def to_list(self):
+        lst = [self.__id, self.__nombre, self.__apellidos, self.__fecha_nacimiento, self.__puntuacion_total, self.__codigo_limpio,
+               self.__chagepeteador, self.__entregador_tardio, self.__ausencias, self.__hablador]
+        return lst
